@@ -19,73 +19,7 @@
         };
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <style>
-        body {
-            display: flex;
-            flex-wrap: wrap; /* 画面幅が狭い場合に折り返し */
-            font-family: sans-serif;
-            line-height: 1.6;
-            margin: 20px;
-            background-color: #f8f8f8;
-        }
-
-        /* メインコンテンツ */
-        main {
-            flex: 1 1 600px; /* 幅を調整 */
-            order: 1;  /*  sidebarより後に配置されるように */
-            padding: 20px;
-        }
-
-        /* サイドバー */
-        aside {
-            flex: 0 0 250px; /* 固定幅 */
-            order: 2; /* sidebarを右側に配置*/
-            padding: 20px;
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-
-
-        h1, h2, h3 {
-            color: #333;
-        }
-
-        p {
-            margin-bottom: 1em;
-        }
-
-        ol {
-            margin-bottom: 1em;
-            padding-left: 20px;
-        }
-
-        li {
-            margin-bottom: 0.5em;
-        }
-
-        .math {
-            font-style: italic;
-        }
-
-        .solution {
-            background-color: #fff;
-            padding: 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            margin-bottom: 1em;
-        }
-        /* レスポンシブ対応：画面幅が狭い場合はサイドバーをメインコンテンツの下に */
-        @media (max-width: 850px) {
-            body {
-                flex-direction: column; /* 縦に並べる */
-            }
-            main, aside {
-                flex: 1 1 100%; /* 幅を100%にする */
-                box-sizing: border-box; /* paddingを含めた幅にする */
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <main>
