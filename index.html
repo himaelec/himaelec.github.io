@@ -6,45 +6,69 @@
     <title>東北大学電磁気学解答 2023年8月実施</title>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script>
-  window.MathJax = {
-    tex: {
-      inlineMath: [['$', '$'], ['\\(', '\\)']],
-      macros: {
-        bm: ['\\boldsymbol{#1}', 1]  // ここで \bm を定義
-      }
-    },
-    svg: {
-      fontCache: 'global'
-    }
-  };
-</script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                macros: {
+                    bm: ['\\boldsymbol{#1}', 1]
+                }
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <style>
         body {
+            display: flex;
+            flex-wrap: wrap; /* 画面幅が狭い場合に折り返し */
             font-family: sans-serif;
             line-height: 1.6;
             margin: 20px;
-            padding: 20px;
-            max-width: 800px;
-            margin: 0 auto;
             background-color: #f8f8f8;
         }
+
+        /* メインコンテンツ */
+        main {
+            flex: 1 1 600px; /* 幅を調整 */
+            max-width: 800px; /* 最大幅を制限 */
+            order: 1;  /*  sidebarより後に配置されるように */
+            padding: 20px;
+        }
+
+        /* サイドバー */
+        aside {
+            flex: 0 0 250px; /* 固定幅 */
+            order: 2; /* sidebarを右側に配置*/
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+
         h1, h2, h3 {
             color: #333;
         }
+
         p {
             margin-bottom: 1em;
         }
+
         ol {
             margin-bottom: 1em;
             padding-left: 20px;
         }
+
         li {
             margin-bottom: 0.5em;
         }
+
         .math {
             font-style: italic;
         }
+
         .solution {
             background-color: #fff;
             padding: 15px;
@@ -52,11 +76,21 @@
             border-radius: 5px;
             margin-bottom: 1em;
         }
+        /* レスポンシブ対応：画面幅が狭い場合はサイドバーをメインコンテンツの下に */
+        @media (max-width: 850px) {
+            body {
+                flex-direction: column; /* 縦に並べる */
+            }
+            main, aside {
+                flex: 1 1 100%; /* 幅を100%にする */
+                box-sizing: border-box; /* paddingを含めた幅にする */
+            }
+        }
     </style>
 </head>
 <body>
-
-    <h1>東北大学電気情報系2023年8月実施【電磁気学】回答</h1>
+    <main>
+        <h1>東北大学電気情報系2023年8月実施【電磁気学】回答</h1>
 
     <div class="solution">
         <h2>(1) ガウスの法則を用いて電界を求める。</h2>
@@ -174,5 +208,24 @@
         \frac{b-a}{bc-ac+ab}} =
         \frac{4\pi\epsilon_0(bc-ac+ab)}{b-a}\]</span>
     </div>
+    
+    </main>
+
+    <aside>
+        <h2>カテゴリー一覧</h2>
+        <ul>
+            <li><a href="#">カテゴリー1</a></li>
+            <li><a href="#">カテゴリー2</a></li>
+            <li><a href="#">カテゴリー3</a></li>
+        </ul>
+
+        <h2>サイト内検索</h2>
+        <form method="get" action="#">
+            <input type="text" name="s" placeholder="キーワードを入力">
+            <button type="submit">検索</button>
+        </form>
+
+    </aside>
+
 </body>
 </html>
