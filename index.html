@@ -6,7 +6,108 @@
     <title>My Homepage</title>
 </head>
 <body>
-    <h1>Hello, World!</h1>
-    <p>This is my homepage on GitHub Pages.</p>
+    <p>東北大学電気情報系2023年8月実施【電磁気学】回答</p>
+<p>(1) ガウスの法則を用いて電界を求める。</p>
+<ol>
+<li><p><span class="math inline">\(r &lt; a\)</span> の場合:
+導体球内部なので電荷は存在せず、ガウスの法則より、 <span
+class="math display">\[\int_{S} \bm{E} \cdot d\bm{S} =
+\frac{Q_{in}}{\epsilon_0}\]</span> ここで、<span
+class="math inline">\(Q_{in}\)</span>は閉曲面内の電荷の総量である。<span
+class="math inline">\(r &lt; a\)</span> では <span
+class="math inline">\(Q_{in} = 0\)</span> なので、 <span
+class="math display">\[E(r) \cdot 4\pi r^2 = 0\]</span>
+したがって、<span class="math inline">\(E(r) = 0\)</span>。</p></li>
+<li><p><span class="math inline">\(a &lt; r &lt; b\)</span> の場合:
+半径<span
+class="math inline">\(r\)</span>の球面にガウスの法則を適用する。閉曲面内部には導体球1の電荷<span
+class="math inline">\(Q_1\)</span>のみが存在するので、<span
+class="math inline">\(Q_{in} = Q_1\)</span>。 <span
+class="math display">\[\int_{S} \bm{E} \cdot d\bm{S} =
+\frac{Q_1}{\epsilon_0}\]</span> 球対称性より電界は径方向を向くので、
+<span class="math display">\[E(r) \cdot 4\pi r^2 =
+\frac{Q_1}{\epsilon_0}\]</span> よって、<span class="math inline">\(E(r)
+= \frac{Q_1}{4\pi\epsilon_0 r^2}\)</span>。</p></li>
+<li><p><span class="math inline">\(b &lt; r &lt; c\)</span> の場合:
+導体球殻内部なので電界は0。 したがって、<span class="math inline">\(E(r)
+= 0\)</span>。</p></li>
+<li><p><span class="math inline">\(c &lt; r\)</span> の場合: 半径<span
+class="math inline">\(r\)</span>の球面にガウスの法則を適用する。閉曲面内部には導体球1の電荷<span
+class="math inline">\(Q_1\)</span>と導体球殻2の電荷<span
+class="math inline">\(Q_2\)</span>が存在するので、<span
+class="math inline">\(Q_{in} = Q_1 + Q_2\)</span>。 <span
+class="math display">\[\int_{S} \bm{E} \cdot d\bm{S} = \frac{Q_1 +
+Q_2}{\epsilon_0}\]</span> 球対称性より電界は径方向を向くので、 <span
+class="math display">\[E(r) \cdot 4\pi r^2 = \frac{Q_1 +
+Q_2}{\epsilon_0}\]</span> よって、<span class="math inline">\(E(r) =
+\frac{Q_1 + Q_2}{4\pi\epsilon_0 r^2}\)</span>。</p></li>
+</ol>
+<p>(2) 電位<span class="math inline">\(V_a\)</span>および<span
+class="math inline">\(V_c\)</span>を求める。電位は無限遠を基準とする。
+<span class="math display">\[\begin{aligned}
+    V_a &amp;= -\int_{\infty}^{a} E(r)dr \\
+    &amp;= -\int_{\infty}^{c} \frac{Q_1 + Q_2}{4\pi\epsilon_0 r^2}dr
+-\int_{c}^{b} 0 dr -\int_{b}^{a} \frac{Q_1}{4\pi\epsilon_0 r^2}dr \\
+    &amp;= \frac{Q_1 + Q_2}{4\pi\epsilon_0} \left[ \frac{1}{r}
+\right]_{\infty}^{c} + \frac{Q_1}{4\pi\epsilon_0} \left[ \frac{1}{r}
+\right]_{b}^{a} \\
+    &amp;= \frac{Q_1 + Q_2}{4\pi\epsilon_0 c} +
+\frac{Q_1}{4\pi\epsilon_0} \left(\frac{1}{a} - \frac{1}{b}\right) \\
+    &amp;= \frac{Q_1}{4\pi\epsilon_0} \left(\frac{1}{a} - \frac{1}{b} +
+\frac{1}{c} \right) + \frac{Q_2}{4\pi\epsilon_0 c}
+\end{aligned}\]</span></p>
+<p><span class="math display">\[\begin{aligned}
+    V_c &amp;= -\int_{\infty}^{c} E(r)dr \\
+    &amp;= -\int_{\infty}^{c} \frac{Q_1 + Q_2}{4\pi\epsilon_0 r^2}dr \\
+    &amp;= \frac{Q_1 + Q_2}{4\pi\epsilon_0} \left[ \frac{1}{r}
+\right]_{\infty}^{c} \\
+    &amp;= \frac{Q_1 + Q_2}{4\pi\epsilon_0 c}
+\end{aligned}\]</span></p>
+<p>(3) 導体球殻2のみを接地したとき(<span class="math inline">\(V_c =
+0\)</span>)。 <span class="math inline">\(V_c = 0\)</span> より、 <span
+class="math display">\[\frac{Q_1 + Q_2}{4\pi\epsilon_0 c} = 0
+\Rightarrow Q_2 = -Q_1\]</span> このとき、<span
+class="math inline">\(V_a\)</span>は <span
+class="math display">\[\begin{aligned}
+V_a &amp;= \frac{Q_1}{4\pi\epsilon_0} \left(\frac{1}{a} - \frac{1}{b} +
+\frac{1}{c} \right) + \frac{Q_2}{4\pi\epsilon_0 c} \\
+&amp;= \frac{Q_1}{4\pi\epsilon_0} \left(\frac{1}{a} - \frac{1}{b} +
+\frac{1}{c} \right) - \frac{Q_1}{4\pi\epsilon_0 c} \\
+&amp;= \frac{Q_1}{4\pi\epsilon_0} \left(\frac{1}{a} - \frac{1}{b}
+\right)
+\end{aligned}\]</span> 静電容量<span
+class="math inline">\(C\)</span>は、<span class="math inline">\(C =
+\frac{Q_1}{V_a}\)</span>で定義されるので、 <span
+class="math display">\[C = \frac{Q_1}{\frac{Q_1}{4\pi\epsilon_0}
+\left(\frac{1}{a} - \frac{1}{b} \right)} =
+\frac{4\pi\epsilon_0}{\frac{1}{a} - \frac{1}{b}} = \frac{4\pi\epsilon_0
+ab}{b-a}\]</span></p>
+<p>(4) 導体球1のみを接地したとき(<span class="math inline">\(V_a =
+0\)</span>)。 <span class="math inline">\(V_a = 0\)</span> より、 <span
+class="math display">\[\frac{Q_1}{4\pi\epsilon_0} \left(\frac{1}{a} -
+\frac{1}{b} + \frac{1}{c} \right) + \frac{Q_2}{4\pi\epsilon_0 c} =
+0\]</span> <span class="math inline">\(Q_1\)</span>について解くと、
+<span class="math display">\[Q_1 \left(\frac{1}{a} - \frac{1}{b} +
+\frac{1}{c} \right) = -\frac{Q_2}{c}\]</span> <span
+class="math display">\[Q_1 = -\frac{\frac{1}{c}}{\frac{1}{a} -
+\frac{1}{b} + \frac{1}{c}} Q_2 = -\frac{\frac{1}{c}}{\frac{bc - ac +
+ab}{abc}} Q_2 = -\frac{ab}{bc - ac + ab} Q_2\]</span> <span
+class="math inline">\(V_c\)</span>は <span
+class="math display">\[\begin{aligned}
+    V_c &amp;= \frac{Q_1 + Q_2}{4\pi\epsilon_0 c} \\
+    &amp;= \frac{-\frac{ab}{bc - ac + ab}Q_2 + Q_2}{4\pi\epsilon_0 c} \\
+    &amp;= \frac{Q_2}{4\pi\epsilon_0 c} \left(1 - \frac{ab}{bc - ac +
+ab} \right) \\
+    &amp;= \frac{Q_2}{4\pi\epsilon_0 c} \frac{bc - ac + ab - ab}{bc - ac
++ ab} \\
+    &amp;= \frac{Q_2}{4\pi\epsilon_0 c} \frac{bc - ac}{bc - ac + ab} \\
+    &amp;= \frac{Q_2}{4\pi\epsilon_0} \frac{b-a}{bc - ac + ab}
+\end{aligned}\]</span> 静電容量<span
+class="math inline">\(C&#39;\)</span>は、<span
+class="math inline">\(C&#39; =
+\frac{Q_2}{V_c}\)</span>で定義されるので、 <span
+class="math display">\[C&#39; = \frac{Q_2}{\frac{Q_2}{4\pi\epsilon_0}
+\frac{b-a}{bc-ac+ab}} =
+\frac{4\pi\epsilon_0(bc-ac+ab)}{b-a}\]</span></p>
 </body>
 </html>
